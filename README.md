@@ -117,5 +117,8 @@ typedef NS_ENUM(NSInteger, XTRefreshState) {
 
 ```
 
+## Customize header view and footer view
+XTRefresh is easy to customize, you just need to extends XTHeaderView for header view or XTFooterView for footer view and you can customize you own UI and animations, for more details refer to the demo in this project
+
 ## License
 This project use `MIT` license, for more details refer to `LICENSE` file
