@@ -30,6 +30,86 @@ self.tableView.xt_footer = imagesFooterView;
 
 [imagesHeaderView beginRefresh];//auto reload data
 ```
+## Apis
+```objective-c
+typedef NS_ENUM(NSInteger, XTRefreshState) {
+    XTRefreshStatePullToRefresh = 0,
+    XTRefreshStateReadyToRefresh = 1,
+    XTRefreshStateRefreshing = 2,
+    XTRefreshStateEnd = 3
+};
+
+@interface XTRefreshView : UIView
+
+//create the refresh view with refresh block
+//this class method use init to initialize instance
+//so if you want to customize refreshview you need to override the init method
++ (instancetype)refreshView:(void(^)(XTRefreshView *refreshView))refreshBlock;
+
+//the method to notify the end of refresh, user should call this to end refresh
+- (void)endRefresh;
+
+//implement this method to start customized animation.
+- (void)startAnimation;
+
+//implement this method to stop customized animation.
+- (void)stopAnimation;
+
+//implement this method to customize the refresh view height
+- (CGFloat)height;
+
+//implement this method to listen refresh state
+- (void)onRreshStateChanged:(XTRefreshState)state;
+
+//the method to get refresh block
+- (void(^)(XTRefreshView *refreshView))refreshBlock;
+
+@end
+
+@interface XTHeaderView : XTRefreshView
+
+//invoke header refresh
+- (void)beginRefresh;
+
+@end
+
+@interface XTTextHeaderView : XTHeaderView
+
+@property (assign, nonatomic) CGFloat textFontSize;
+@property (strong, nonatomic) UIColor *textColor;
+@property (copy, nonatomic) NSString *pullToRefreshText;
+@property (copy, nonatomic) NSString *readyToRefreshText;
+@property (copy, nonatomic) NSString *refreshingText;
+
+@end
+
+@interface XTImagesHeaderView : XTHeaderView
+
+@property (copy, nonatomic) NSString *pullToRefreshText;
+@property (copy, nonatomic) NSString *readyToRefreshText;
+@property (copy, nonatomic) NSString *refreshingText;
+
+- (void)setImages:(NSArray*)images animationDuration:(CGFloat)animationDuration;
+- (void)setImages:(NSArray*)images;
+
+@end
+
+@interface XTTextFooterView : XTFooterView
+
+@property (assign, nonatomic) CGFloat textFontSize;
+@property (strong, nonatomic) UIColor *textColor;
+@property (copy, nonatomic) NSString *refreshingText;
+
+@end
+
+@interface XTImagesFooterView : XTFooterView
+
+- (void)setImages:(NSArray*)images animationDuration:(CGFloat)animationDuration;
+- (void)setImages:(NSArray*)images;
+
+@end
+
+```
 
 ## License
 This project use `MIT` license, for more details refer to `LICENSE` file
