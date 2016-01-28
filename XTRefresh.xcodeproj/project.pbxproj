@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		844A609C1C5A127100B99CF7 /* XTImagesFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 844A609B1C5A127100B99CF7 /* XTImagesFooterView.m */; };
 		84DFCEAA1C59E6690070664A /* XTFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84DFCE8F1C59E6690070664A /* XTFooterView.m */; };
 		84DFCEAB1C59E6690070664A /* XTTextFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84DFCE911C59E6690070664A /* XTTextFooterView.m */; };
 		84DFCEAC1C59E6690070664A /* XTHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84DFCE941C59E6690070664A /* XTHeaderView.m */; };
@@ -20,12 +21,13 @@
 		84DFCEB41C59E6690070664A /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 84DFCEA61C59E6690070664A /* Info.plist */; };
 		84DFCEB51C59E6690070664A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 84DFCEA71C59E6690070664A /* main.m */; };
 		84DFCEB61C59E6690070664A /* XTMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84DFCEA91C59E6690070664A /* XTMainViewController.m */; };
-		84DFCEB91C59EBF90070664A /* XTImagesFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84DFCEB81C59EBF90070664A /* XTImagesFooterView.m */; };
 		84DFCEBC1C59FF650070664A /* XTImagesHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84DFCEBB1C59FF650070664A /* XTImagesHeaderView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		8407F1471C58F68000AE6D41 /* XTRefresh.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XTRefresh.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		844A609A1C5A127100B99CF7 /* XTImagesFooterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XTImagesFooterView.h; sourceTree = "<group>"; };
+		844A609B1C5A127100B99CF7 /* XTImagesFooterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XTImagesFooterView.m; sourceTree = "<group>"; };
 		84DFCE8E1C59E6690070664A /* XTFooterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XTFooterView.h; sourceTree = "<group>"; };
 		84DFCE8F1C59E6690070664A /* XTFooterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XTFooterView.m; sourceTree = "<group>"; };
 		84DFCE901C59E6690070664A /* XTTextFooterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XTTextFooterView.h; sourceTree = "<group>"; };
@@ -50,8 +52,6 @@
 		84DFCEA71C59E6690070664A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		84DFCEA81C59E6690070664A /* XTMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XTMainViewController.h; sourceTree = "<group>"; };
 		84DFCEA91C59E6690070664A /* XTMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XTMainViewController.m; sourceTree = "<group>"; };
-		84DFCEB71C59EBF90070664A /* XTImagesFooterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = XTImagesFooterView.h; path = ../../../../Documents/XTImagesFooterView.h; sourceTree = "<group>"; };
-		84DFCEB81C59EBF90070664A /* XTImagesFooterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = XTImagesFooterView.m; path = ../../../../Documents/XTImagesFooterView.m; sourceTree = "<group>"; };
 		84DFCEBA1C59FF650070664A /* XTImagesHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XTImagesHeaderView.h; sourceTree = "<group>"; };
 		84DFCEBB1C59FF650070664A /* XTImagesHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XTImagesHeaderView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -107,8 +107,8 @@
 				84DFCE8F1C59E6690070664A /* XTFooterView.m */,
 				84DFCE901C59E6690070664A /* XTTextFooterView.h */,
 				84DFCE911C59E6690070664A /* XTTextFooterView.m */,
-				84DFCEB71C59EBF90070664A /* XTImagesFooterView.h */,
-				84DFCEB81C59EBF90070664A /* XTImagesFooterView.m */,
+				844A609A1C5A127100B99CF7 /* XTImagesFooterView.h */,
+				844A609B1C5A127100B99CF7 /* XTImagesFooterView.m */,
 			);
 			path = Footer;
 			sourceTree = "<group>";
@@ -218,11 +218,11 @@
 				84DFCEAB1C59E6690070664A /* XTTextFooterView.m in Sources */,
 				84DFCEAA1C59E6690070664A /* XTFooterView.m in Sources */,
 				84DFCEAD1C59E6690070664A /* XTTextHeaderView.m in Sources */,
-				84DFCEB91C59EBF90070664A /* XTImagesFooterView.m in Sources */,
 				84DFCEAE1C59E6690070664A /* UIScrollView+XTRefresh.m in Sources */,
 				84DFCEAC1C59E6690070664A /* XTHeaderView.m in Sources */,
 				84DFCEBC1C59FF650070664A /* XTImagesHeaderView.m in Sources */,
 				84DFCEB51C59E6690070664A /* main.m in Sources */,
+				844A609C1C5A127100B99CF7 /* XTImagesFooterView.m in Sources */,
 				84DFCEB01C59E6690070664A /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
