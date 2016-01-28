@@ -10,6 +10,7 @@
 
 @interface XTHeaderView : XTRefreshView
 
+//invoke header refresh
 - (void)beginRefresh;
 
 @end

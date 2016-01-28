@@ -12,7 +12,10 @@
 
 @interface UIScrollView(XTRefresh)
 
+//pull to refresh header
 @property (strong, nonatomic) XTRefreshView *xt_header;
+
+//load more footer
 @property (strong, nonatomic) XTRefreshView *xt_footer;
 
 @end
