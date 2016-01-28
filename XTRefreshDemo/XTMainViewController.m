@@ -30,8 +30,6 @@
     
     self.tableView.dataSource = self;
     
-    self.numberOfRows = 20;
-    
     XTWeakify(self);
     XTImagesHeaderView *imagesHeaderView = [XTImagesHeaderView refreshView:^(XTRefreshView *refreshView) {
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
@@ -54,6 +52,8 @@
     }];
     [imagesFooterView setImages:@[[UIImage imageNamed:@"Loading_0"], [UIImage imageNamed:@"Loading_1"], [UIImage imageNamed:@"Loading_2"], [UIImage imageNamed:@"Loading_3"]]];
     self.tableView.xt_footer = imagesFooterView;
+    
+    [imagesHeaderView beginRefresh];
 }
 
 - (void)viewDidLayoutSubviews {

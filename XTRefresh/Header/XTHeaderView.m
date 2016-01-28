@@ -13,6 +13,7 @@
 
 @property (assign, nonatomic) BOOL isRefreshing;
 @property (assign, nonatomic) BOOL refreshFlag;
+@property (assign, nonatomic) BOOL startRefreshWithAnimation;
 
 @end
 
@@ -20,19 +21,38 @@
 
 static char kXTHeaderViewContextContentOffset;
 
+- (void)beginRefresh {
+    if (!self.isRefreshing) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            self.startRefreshWithAnimation = YES;
+            [self startRefresh];
+        });
+    }
+}
+
 - (void)startRefresh {
     [self onRreshStateChanged:XTRefreshStateRefreshing];
     self.isRefreshing = YES;
     self.scrollView.scrollEnabled = NO;
     UIEdgeInsets insets = self.scrollView.contentInset;
     insets.top += [self height];
-    
     [self.scrollView setContentInset:insets];
-    self.frame = CGRectMake(0, -[self height], self.scrollView.bounds.size.width, [self height]);
-    [self startAnimation];
-    if (self.refreshBlock) {
-        self.refreshBlock(self);
+    if (self.startRefreshWithAnimation) {
+        [self.scrollView setContentOffset:CGPointMake(self.scrollView.contentOffset.x, -insets.top) animated:YES];
+        self.frame = CGRectMake(0, -[self height], self.scrollView.bounds.size.width, [self height]);
+        [self startAnimation];
+        if (self.refreshBlock) {
+            self.refreshBlock(self);
+        }
+    } else {
+        self.frame = CGRectMake(0, -[self height], self.scrollView.bounds.size.width, [self height]);
+        [self startAnimation];
+        if (self.refreshBlock) {
+            self.refreshBlock(self);
+        }
     }
+    
+    self.startRefreshWithAnimation = NO;
 }
 
 - (void)endRefresh {

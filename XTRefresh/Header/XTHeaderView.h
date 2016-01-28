@@ -10,4 +10,6 @@
 
 @interface XTHeaderView : XTRefreshView
 
+- (void)beginRefresh;
+
 @end
