@@ -5,6 +5,7 @@ UIScrollView extension for pull to refresh and auto load more and it's easily to
 
 ## Usage
 Drag the folder to your project<br>
+<img height=250 src="https://github.com/imchenglibin/XTRefresh/blob/master/Images/Folder.png"><br>
 
 or just use pod<br>
 pod 'XTRefresh', :git => 'https://github.com/imchenglibin/XTRefresh.git'
