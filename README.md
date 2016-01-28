@@ -26,6 +26,8 @@ XTImagesFooterView *imagesFooterView = [XTImagesFooterView refreshView:^(XTRefre
 }];
 [imagesFooterView setImages:@[[UIImage imageNamed:@"Loading_0"], [UIImage imageNamed:@"Loading_1"], [UIImage imageNamed:@"Loading_2"], [UIImage imageNamed:@"Loading_3"]]];
 self.tableView.xt_footer = imagesFooterView;
+
+[imagesHeaderView beginRefresh];//auto reload data
 ```
 
 ## License
